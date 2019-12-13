@@ -1,7 +1,7 @@
 /*
- * HomePage
+ * SearchArea
  *
- * This is the first thing users see of our App, at the '/' route
+ * The area of the HomePage that contiains the general informatino and search button
  *
  */
 
@@ -9,7 +9,7 @@ import React, { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
-export default function Search() {
+export default function SearchArea() {
   return (
     <Fragment>
       <div>
