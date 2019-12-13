@@ -7,11 +7,13 @@
 
 import React from 'react';
 import Header from '../Header';
+import Search from '../Search';
 
 export default function HomePage() {
   return (
     <h1>
       <Header />
+      <Search />
     </h1>
   );
 }
