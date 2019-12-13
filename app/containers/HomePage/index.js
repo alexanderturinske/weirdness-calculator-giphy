@@ -11,9 +11,9 @@ import SearchArea from '../SearchArea';
 
 export default function HomePage() {
   return (
-    <h1>
+    <div>
       <Header />
       <SearchArea />
-    </h1>
+    </div>
   );
 }
