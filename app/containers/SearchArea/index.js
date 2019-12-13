@@ -8,6 +8,7 @@
 import React, { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import SearchForm from '../SearchForm';
 
 export default function SearchArea() {
   return (
@@ -18,6 +19,7 @@ export default function SearchArea() {
       <div>
         <FormattedMessage {...messages.introduction2} />
       </div>
+      <SearchForm />
     </Fragment>
   );
 }
