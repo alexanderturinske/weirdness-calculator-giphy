@@ -6,10 +6,16 @@
  */
 
 import React, { Fragment, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import reduxInfo from '../../redux';
+const {
+  actions: { fetchGifs },
+} = reduxInfo;
 
 export default function SearchForm() {
+  const dispatch = useDispatch();
   const [current, setState] = useState('');
 
   const changeInput = event => {
@@ -17,8 +23,7 @@ export default function SearchForm() {
   };
 
   const handleSubmit = () => {
-    console.log('current: ', current);
-    // do something with current
+    dispatch(fetchGifs(current));
   };
 
   return (
