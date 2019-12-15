@@ -8,7 +8,7 @@ function* fetchGifsSaga(action) {
   try {
     const weirdGifsForks = [];
     for (let i = 0; i <= numberOfGifs; i++) {
-      weirdGifsForks.push(yield fork(request, giphyInputUrl(action.value, 0)));
+      weirdGifsForks.push(yield fork(request, giphyInputUrl(action.value, i)));
     }
     const weirdGifs = yield join(weirdGifsForks);
     // Convert array to object to store in the redux store in case any operations
