@@ -9,6 +9,7 @@ import React from 'react';
 import Header from '../Header';
 import SearchArea from '../SearchArea';
 import SearchResults from '../SearchResults';
+import Favorites from '../Favorites';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Header />
       <SearchArea />
       <SearchResults />
+      <Favorites />
     </div>
   );
 }
