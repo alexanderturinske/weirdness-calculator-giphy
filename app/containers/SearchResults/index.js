@@ -20,10 +20,10 @@ export default function SearchResults() {
   // TODO: Break out Like button into its own component so that SearhResults does not rerender
   // on liking something, which unnecessarily runs createGifComponents, which is semi-expensive
   const handleLike = () => {
-    distpatch(reduxInfo.actions.addFavorite(gifs[0]));
+    distpatch(reduxInfo.actions.addFavorite({ gif: gifs[0], weirdness: 0 }));
   };
 
-  const isFavorite = favorites[gifs[0].id];
+  const isFavorite = gifs[0] && favorites[gifs[0].id];
   return (
     <div className="search-results-container">
       <h2>

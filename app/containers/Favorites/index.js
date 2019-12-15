@@ -12,6 +12,7 @@ import Gif from '../Gif';
 
 export default function Favorites() {
   const favorites = useSelector(state => state.favorites.favorites);
+  const areThere5Favorites = 5 - Object.keys(favorites).length;
   const handleSubmit = () => {
     // TODO: Navigate to /results
   };
@@ -22,9 +23,10 @@ export default function Favorites() {
         <FormattedMessage {...messages.title} />
       </div>
       <div>
-        {Object.values(favorites).map(gif => (
-          <Gif gif={gif} weirdness={0} key={gif.id} />
-        ))}
+        {Object.values(favorites).map(gif => {
+          const { gif: giphy, weirdness } = gif;
+          return <Gif gif={giphy} weirdness={weirdness} key={giphy.id} />;
+        })}
       </div>
       <div>
         <button type="submit" onClick={handleSubmit}>
@@ -32,7 +34,10 @@ export default function Favorites() {
         </button>
       </div>
       <div>
-        <FormattedMessage {...messages.status} values={{ value: 5 }} />
+        <FormattedMessage
+          {...messages.status}
+          values={{ value: areThere5Favorites }}
+        />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const favoritesReducer = (state = initialState, action) => {
   const favorites = { ...state.favorites };
   switch (action.type) {
     case types.ADD_FAVORITE:
-      favorites[value.id] = value;
+      favorites[value.gif.id] = value;
       return { ...state, favorites };
     case types.REMOVE_FAVORITE:
       delete favorites[value.id];
