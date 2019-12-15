@@ -1,15 +1,10 @@
 import React from 'react';
+import Gif from '../Gif';
 
 export const createGifComponents = gifs => {
   const gifItems = [];
   for (let i = 0; i < Object.keys(gifs).length; i++) {
-    const alt = `weirdness-level-${i}`;
-    gifItems.push(
-      <div key={gifs[i].id}>
-        <div>{gifs[i].title}</div>
-        <img src={gifs[i].images.original.url} alt={alt} />
-      </div>,
-    );
+    gifItems.push(<Gif gif={gifs[i]} weirdness={i} />);
   }
   return gifItems;
 };
