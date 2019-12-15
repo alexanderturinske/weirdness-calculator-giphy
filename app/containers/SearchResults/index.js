@@ -6,25 +6,31 @@
  */
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import messages from './messages';
 import { createGifComponents } from './utils';
+import reduxInfo from '../../redux';
 
-export default function SearchForm() {
+export default function SearchResults() {
+  const distpatch = useDispatch();
+  const favorites = useSelector(state => state.favorites.favorites);
   const gifs = useSelector(state => state.giphy.gifs);
   const gifItems = createGifComponents(gifs);
 
+  // TODO: Break out Like button into its own component so that SearhResults does not rerender
+  // on liking something, which unnecessarily runs createGifComponents, which is semi-expensive
   const handleLike = () => {
-    // add gif to store.favorites
+    distpatch(reduxInfo.actions.addFavorite(gifs[0]));
   };
 
+  const isFavorite = favorites[gifs[0].id];
   return (
     <div className="search-results-container">
       <h2>
         <FormattedMessage {...messages.title} />
       </h2>
       {gifItems}
-      <button type="submit" onClick={handleLike}>
+      <button type="submit" onClick={handleLike} disabled={isFavorite}>
         Like
       </button>
       <div>
