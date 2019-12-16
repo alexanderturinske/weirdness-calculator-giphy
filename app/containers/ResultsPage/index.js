@@ -34,17 +34,22 @@ export default function ResultsPage() {
         />
       </h1>
       <div className="gifs-container">
-        {Object.values(favorites).map(gif => {
-          const { gif: giphy, weirdness } = gif;
-          return (
-            <Gif
-              gif={giphy}
-              weirdness={weirdness}
-              key={giphy.id}
-              options={{ showCaption: true }}
-            />
-          );
-        })}
+        <div>
+          <FormattedMessage {...messages.gifsTitle} />
+        </div>
+        <div className="gifs-list">
+          {Object.values(favorites).map(gif => {
+            const { gif: giphy, weirdness } = gif;
+            return (
+              <Gif
+                gif={giphy}
+                weirdness={weirdness}
+                key={giphy.id}
+                options={{ showCaption: true }}
+              />
+            );
+          })}
+        </div>
       </div>
       <LinkedButton to="/home" onClick={clearStore}>
         <FormattedMessage {...messages.button} />

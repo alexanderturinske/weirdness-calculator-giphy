@@ -12,6 +12,10 @@ export default defineMessages({
     id: `${scope}.header`,
     defaultMessage: 'You scored an {mean} out of {max} on the weirdness scale!',
   },
+  gifsTitle: {
+    id: `${scope}.gifsTitle`,
+    defaultMessage: 'The GIFs you liked',
+  },
   button: {
     id: `${scope}.button`,
     defaultMessage: 'START OVER',
