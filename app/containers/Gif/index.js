@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 import { maxWeirdness } from '../../constants';
 
 export default function Gif({ gif, weirdness, options = {} }) {
-  const { id, title, images } = gif;
+  const { id, images } = gif;
+  const title = gif.title === '' ? 'No Title Available' : gif.title;
   const alt = `weirdness-level-${weirdness}`;
   const caption = `${weirdness}\\${maxWeirdness}`;
 
