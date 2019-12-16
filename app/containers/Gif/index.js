@@ -14,7 +14,7 @@ export default function Gif({ gif, weirdness }) {
   return (
     <div key={id}>
       <div>{title}</div>
-      <img src={images.original.url} alt={alt} />
+      <img src={images.fixed_height_downsampled.url} alt={alt} />
     </div>
   );
 }
