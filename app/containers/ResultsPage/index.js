@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Gif from '../Gif';
-import Header from '../Header';
 import LinkedButton from '../LinkedButton';
 import reduxInfo from '../../redux';
 import { calculateMean } from './utils';
@@ -26,7 +25,6 @@ export default function ResultsPage() {
 
   return (
     <Fragment>
-      <Header />
       <h1>
         <FormattedMessage {...messages.header} values={{ mean, max: 10 }} />
       </h1>

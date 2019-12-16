@@ -13,12 +13,14 @@ import { Switch, Redirect, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import ResultsPage from 'containers/ResultsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Header from 'containers/Header';
 
 import GlobalStyle from '../../global-styles';
 
 export default function App() {
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
