@@ -35,10 +35,11 @@ export default function Favorites() {
           const { gif: giphy, weirdness } = gif;
           return (
             <div key={giphy.id}>
-              <button type="submit" onClick={() => removeFavorite(giphy.id)}>
-                X
-              </button>
-              <Gif gif={giphy} weirdness={weirdness} />
+              <Gif
+                gif={giphy}
+                weirdness={weirdness}
+                options={{ allowRemoval: removeFavorite }}
+              />
             </div>
           );
         })}

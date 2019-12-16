@@ -16,6 +16,13 @@ export default function Gif({ gif, weirdness, options = {} }) {
 
   return (
     <div key={id}>
+      {options.allowRemoval && (
+        <div>
+          <button type="submit" onClick={() => options.allowRemoval(id)}>
+            X
+          </button>
+        </div>
+      )}
       <div>{title}</div>
       <img src={images.fixed_height_downsampled.url} alt={alt} />
       {options.showCaption && <div>{caption}</div>}
