@@ -4,8 +4,8 @@
  * The Search Form fields
  *
  */
-
-import React, { Fragment, useState } from 'react';
+import './searchForm.scss';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
@@ -27,7 +27,7 @@ export default function SearchForm() {
   };
 
   return (
-    <Fragment>
+    <div className="searchform-container">
       <form onSubmit={handleSubmit}>
         <label>
           <FormattedMessage {...messages.title} />
@@ -37,6 +37,6 @@ export default function SearchForm() {
       <button type="submit" onClick={handleSubmit}>
         Submit
       </button>
-    </Fragment>
+    </div>
   );
 }
