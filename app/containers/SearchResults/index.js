@@ -4,6 +4,7 @@
  * The Search Results from the Giphy API, ordered by weirdness
  *
  */
+import './searchResults.scss';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
 import React, { useState } from 'react';
@@ -37,7 +38,7 @@ export default function SearchResults() {
   };
 
   return (
-    <div className="search-results-container">
+    <div className="searchresults-container">
       <h2>
         <FormattedMessage {...messages.title} />
       </h2>

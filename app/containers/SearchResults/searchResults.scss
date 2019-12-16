@@ -1,0 +1,10 @@
+.searchresults-container {
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2em;
+  flex-direction: column;
+  & button {
+    width: 100px;
+  }
+}
