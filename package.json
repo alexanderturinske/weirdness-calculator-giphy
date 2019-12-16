@@ -1,6 +1,6 @@
 {
   "name": "weirdness-calculator-giphy",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "A calculator for how weird a user is based on the gifs they like most from giphy",
   "repository": {
     "type": "git",
