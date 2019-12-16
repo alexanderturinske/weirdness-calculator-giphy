@@ -7,7 +7,8 @@
  *
  */
 
-import React from 'react';
+import './app.scss';
+import React, { Fragment } from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
@@ -19,7 +20,7 @@ import GlobalStyle from '../../global-styles';
 
 export default function App() {
   return (
-    <div>
+    <Fragment>
       <Header />
       <Switch>
         <Route exact path="/">
@@ -30,6 +31,6 @@ export default function App() {
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
-    </div>
+    </Fragment>
   );
 }
