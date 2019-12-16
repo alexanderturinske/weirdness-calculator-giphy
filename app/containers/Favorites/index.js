@@ -1,18 +1,26 @@
 /*
  * Favorites
  *
- * The Favorites Section
+ * Displays the favorited items and allows for calculation
+ * once five GIFs are favorited
  *
  */
+
+// Styling
 import './favorites.scss';
+
+// Dependencies
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
+
+// Components
 import messages from './messages';
 import Gif from '../Gif';
 import LinkedButtom from '../LinkedButton';
 import { maxFavorites } from '../../constants';
+
+// Redux
 import reduxInfo from '../../redux';
 const { actions } = reduxInfo;
 
@@ -56,10 +64,3 @@ export default function Favorites() {
     </div>
   );
 }
-
-Favorites.propTypes = {
-  // The history object from react-router
-  // Used so that a button can be used as a link
-  // Taken from https://stackoverflow.com/questions/42463263/wrapping-a-react-router-link-in-an-html-button
-  history: PropTypes.object,
-};

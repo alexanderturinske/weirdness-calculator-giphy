@@ -1,7 +1,7 @@
 /*
  * ResultsPage Messages
  *
- * This contains all the text for the HomePage container.
+ * This contains all the text for the ResultsPage container.
  */
 import { defineMessages } from 'react-intl';
 

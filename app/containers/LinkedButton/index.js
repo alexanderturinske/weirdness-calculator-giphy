@@ -4,10 +4,15 @@
  * A button that acts like a link
  *
  */
+
+// Dependencies
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+
+// Styling
+// TODO: Style this component
 
 const LinkButton = ({
   history,

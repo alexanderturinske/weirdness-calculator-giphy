@@ -1,7 +1,7 @@
 /*
- * Header Messages
+ * SearchArea Messages
  *
- * This contains all the text for the Header container.
+ * This contains all the text for the SearchArea container.
  */
 import { defineMessages } from 'react-intl';
 

@@ -1,3 +1,7 @@
+/**
+ * Calculates the mean value of weirdness of the GIFs favorited
+ * @param {Object} favorites all the favorited GIFs
+ */
 export const calculateMean = favorites => {
   const gifs = Object.values(favorites);
   const total = !gifs.length

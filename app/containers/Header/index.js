@@ -1,14 +1,19 @@
 /*
- * HomePage
+ * Header
  *
- * This is the first thing users see of our App, at the '/' route
+ * Shows application title
  *
  */
 
-import './header.scss';
+// Dependencies
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+
+// Components
 import messages from './messages';
+
+// Styling
+import './header.scss';
 
 export default function Header() {
   return (

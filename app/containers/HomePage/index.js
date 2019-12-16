@@ -1,14 +1,21 @@
 /*
  * HomePage
  *
- * This is the first thing users see of our App, at the '/' route
+ * Page for '/' and '/home' route. Allows users to search, see results,
+ * add to favorites, and navigate to weirdness results
  *
  */
-import './homepage.scss';
+
+// Dependencies
 import React from 'react';
+
+// Components
 import SearchArea from '../SearchArea';
 import SearchResults from '../SearchResults';
 import Favorites from '../Favorites';
+
+// Styling
+import './homepage.scss';
 
 export default function HomePage() {
   return (
