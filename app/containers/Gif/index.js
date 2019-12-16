@@ -11,7 +11,7 @@ import { maxWeirdness } from '../../constants';
 export default function Gif({ gif, weirdness, options = {} }) {
   const { id, title, images } = gif;
   const alt = `weirdness-level-${weirdness}`;
-  const caption = `${weirdness}\\${maxWeirdness}`
+  const caption = `${weirdness}\\${maxWeirdness}`;
 
   return (
     <div key={id}>
