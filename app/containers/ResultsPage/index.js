@@ -4,8 +4,8 @@
  * The page that shows the user their favorited gifs and the mean of their weirdness
  *
  */
-
-import React, { Fragment } from 'react';
+import './resultsPage.scss';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
@@ -26,14 +26,14 @@ export default function ResultsPage() {
   };
 
   return (
-    <Fragment>
+    <div className="resultspage-container">
       <h1>
         <FormattedMessage
           {...messages.header}
           values={{ mean, max: maxWeirdness }}
         />
       </h1>
-      <div>
+      <div className="gifs-container">
         {Object.values(favorites).map(gif => {
           const { gif: giphy, weirdness } = gif;
           return (
@@ -49,6 +49,6 @@ export default function ResultsPage() {
       <LinkedButton to="/home" onClick={clearStore}>
         <FormattedMessage {...messages.button} />
       </LinkedButton>
-    </Fragment>
+    </div>
   );
 }
