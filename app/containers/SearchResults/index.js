@@ -30,7 +30,7 @@ export default function SearchResults() {
     );
   };
 
-  const isFavorite = Object.keys(gifs).length && favorites[gifs[0].id];
+  const isFavorite = Object.keys(gifs).length && favorites[gifs[weirdness].id];
 
   const onSlide = event => {
     setWeirdness(event);
