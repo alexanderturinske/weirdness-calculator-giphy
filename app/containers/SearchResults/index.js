@@ -20,11 +20,8 @@ export default function SearchResults() {
   const distpatch = useDispatch();
   const favorites = useSelector(state => state.favorites.favorites);
   const gifs = useSelector(state => state.giphy.gifs);
-  const gifItems = createGifComponents(gifs);
   const [weirdness, setWeirdness] = useState(0);
 
-  // TODO: Break out Like button into its own component so that SearhResults does not rerender
-  // on liking something, which unnecessarily runs createGifComponents, which is semi-expensive
   const handleLike = () => {
     distpatch(
       reduxInfo.actions.addFavorite({ gif: gifs[weirdness], weirdness }),
@@ -37,15 +34,14 @@ export default function SearchResults() {
     setWeirdness(event);
   };
 
+  const gifItems = createGifComponents(gifs, handleLike, isFavorite);
+
   return (
     <div className="searchresults-container">
       <h2>
         <FormattedMessage {...messages.title} />
       </h2>
       {gifItems[weirdness]}
-      <button type="submit" onClick={handleLike} disabled={isFavorite}>
-        Like
-      </button>
       <div className="slidecontainer">
         <Slider
           min={0}

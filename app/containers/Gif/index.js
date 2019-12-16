@@ -19,6 +19,17 @@ export default function Gif({ gif, weirdness, options = {} }) {
       <div>{title}</div>
       <img src={images.fixed_height_downsampled.url} alt={alt} />
       {options.showCaption && <div>{caption}</div>}
+      {options.showLike && (
+        <div>
+          <button
+            type="submit"
+            onClick={options.showLike.onClick}
+            disabled={options.showLike.isDisabled}
+          >
+            Like
+          </button>
+        </div>
+      )}
     </div>
   );
 }
