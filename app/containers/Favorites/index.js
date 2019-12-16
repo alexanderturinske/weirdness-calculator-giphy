@@ -11,12 +11,12 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Gif from '../Gif';
 import LinkedButtom from '../LinkedButton';
+import { maxFavorites } from '../../constants';
 
 export default function Favorites() {
   const favorites = useSelector(state => state.favorites.favorites);
 
-  // TODO: Should be 5, not 1. Testing purposes only.
-  const areThere5Favorites = 1 - Object.keys(favorites).length;
+  const areThere5Favorites = maxFavorites - Object.keys(favorites).length;
 
   return (
     <div>

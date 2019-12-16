@@ -16,6 +16,6 @@ export default defineMessages({
   introduction2: {
     id: `${scope}.introduction2`,
     defaultMessage:
-      "When you find a GIF you like, press the Like button. Once you like 5 GIFs, we'll show you how weird you are.",
+      "When you find a GIF you like, press the Like button. Once you like {maxFavorites} GIFs, we'll show you how weird you are.",
   },
 });

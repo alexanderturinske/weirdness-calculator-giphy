@@ -9,6 +9,7 @@ import React, { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import SearchForm from '../SearchForm';
+import { maxFavorites } from '../../constants';
 
 export default function SearchArea() {
   return (
@@ -17,7 +18,10 @@ export default function SearchArea() {
         <FormattedMessage {...messages.introduction1} />
       </div>
       <div>
-        <FormattedMessage {...messages.introduction2} />
+        <FormattedMessage
+          {...messages.introduction2}
+          values={{ maxFavorites }}
+        />
       </div>
       <SearchForm />
     </Fragment>
