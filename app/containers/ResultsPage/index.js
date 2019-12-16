@@ -36,7 +36,14 @@ export default function ResultsPage() {
       <div>
         {Object.values(favorites).map(gif => {
           const { gif: giphy, weirdness } = gif;
-          return <Gif gif={giphy} weirdness={weirdness} key={giphy.id} />;
+          return (
+            <Gif
+              gif={giphy}
+              weirdness={weirdness}
+              key={giphy.id}
+              options={{ showCaption: true }}
+            />
+          );
         })}
       </div>
       <LinkedButton to="/home" onClick={clearStore}>
