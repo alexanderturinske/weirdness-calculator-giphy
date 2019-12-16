@@ -6,17 +6,23 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Gif from '../Gif';
 import LinkedButtom from '../LinkedButton';
 import { maxFavorites } from '../../constants';
+import reduxInfo from '../../redux';
+const { actions } = reduxInfo;
 
 export default function Favorites() {
+  const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorites.favorites);
 
   const areThere5Favorites = maxFavorites - Object.keys(favorites).length;
+  const removeFavorite = id => {
+    dispatch(actions.removeFavorite(id));
+  };
 
   return (
     <div>
@@ -26,7 +32,14 @@ export default function Favorites() {
       <div>
         {Object.values(favorites).map(gif => {
           const { gif: giphy, weirdness } = gif;
-          return <Gif gif={giphy} weirdness={weirdness} key={giphy.id} />;
+          return (
+            <div key={giphy.id}>
+              <button type="submit" onClick={() => removeFavorite(giphy.id)}>
+                X
+              </button>
+              <Gif gif={giphy} weirdness={weirdness} />
+            </div>
+          );
         })}
       </div>
       <LinkedButtom to="/results">
