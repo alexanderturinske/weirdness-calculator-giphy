@@ -20,8 +20,8 @@ export default function ResultsPage() {
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorites.favorites);
   const mean = calculateMean(favorites);
-  const clearFavorites = () => {
-    dispatch(actions.clearFavorites());
+  const clearStore = () => {
+    dispatch(actions.clearStore());
   };
 
   return (
@@ -36,7 +36,7 @@ export default function ResultsPage() {
           return <Gif gif={giphy} weirdness={weirdness} key={giphy.id} />;
         })}
       </div>
-      <LinkedButton to="/home" onClick={clearFavorites}>
+      <LinkedButton to="/home" onClick={clearStore}>
         <FormattedMessage {...messages.button} />
       </LinkedButton>
     </Fragment>

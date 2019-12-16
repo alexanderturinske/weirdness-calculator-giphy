@@ -19,3 +19,10 @@ export function addGifs(gifs) {
     value: gifs,
   };
 }
+
+export function clearGifs() {
+  return {
+    type: types.CLEAR_GIFS,
+    value: {},
+  };
+}

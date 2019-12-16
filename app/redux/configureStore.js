@@ -6,7 +6,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
-import { giphySagas, giphyReducer } from './Giphy';
+import globalStoreSagas from './sagas';
+import { giphySagas } from './Giphy';
 
 export default function configureStore(initialState = {}, history) {
   let composeEnhancers = compose;
@@ -47,6 +48,7 @@ export default function configureStore(initialState = {}, history) {
   store.runSaga = sagaMiddleware.run;
   store.injectedReducers = {}; // Reducer registry
   store.injectedSagas = {}; // Saga registry
+  Object.values(globalStoreSagas).forEach(saga => store.runSaga(saga));
   Object.values(giphySagas).forEach(saga => store.runSaga(saga));
 
   // Make reducers hot reloadable, see http://mxs.is/googmo

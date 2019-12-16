@@ -15,6 +15,8 @@ const giphyReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_GIFS:
       return { ...state, gifs: value };
+    case types.CLEAR_GIFS:
+      return initialState;
     default:
       return state;
   }
