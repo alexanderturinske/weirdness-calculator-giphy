@@ -13,6 +13,8 @@ import Gif from '../Gif';
 import LinkedButton from '../LinkedButton';
 import reduxInfo from '../../redux';
 import { calculateMean } from './utils';
+import { maxWeirdness } from '../../constants';
+
 const { actions } = reduxInfo;
 
 export default function ResultsPage() {
@@ -26,7 +28,10 @@ export default function ResultsPage() {
   return (
     <Fragment>
       <h1>
-        <FormattedMessage {...messages.header} values={{ mean, max: 10 }} />
+        <FormattedMessage
+          {...messages.header}
+          values={{ mean, max: maxWeirdness }}
+        />
       </h1>
       <div>
         {Object.values(favorites).map(gif => {

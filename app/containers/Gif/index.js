@@ -22,6 +22,6 @@ export default function Gif({ gif, weirdness }) {
 Gif.propTypes = {
   // The Gif object from the GIPHY API
   gif: PropTypes.object,
-  // The weirdness rating of the gif, 1 through 10
+  // The weirdness rating of the gif, 1 through maxWeirdness
   weirdness: PropTypes.number,
 };

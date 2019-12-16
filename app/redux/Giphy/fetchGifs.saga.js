@@ -1,13 +1,14 @@
 import { fork, join, put, takeEvery } from 'redux-saga/effects';
 import request from '../../utils/request';
 import { addGifs } from './actions';
-import { giphyInputUrl, numberOfGifs } from './constants';
+import { giphyInputUrl } from './constants';
+import { maxWeirdness } from '../../constants';
 import * as types from './types';
 
 function* fetchGifsSaga(action) {
   try {
     const weirdGifsForks = [];
-    for (let i = 0; i <= numberOfGifs; i++) {
+    for (let i = 0; i <= maxWeirdness; i++) {
       weirdGifsForks.push(yield fork(request, giphyInputUrl(action.value, i)));
     }
     const weirdGifs = yield join(weirdGifsForks);
