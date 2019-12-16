@@ -20,7 +20,7 @@ function* fetchGifsSaga(action) {
     }, {});
     yield put(addGifs(gifs));
   } catch (e) {
-    // TODO: throw error or try to fetch again
+    throw new Error(e);
   }
 }
 
