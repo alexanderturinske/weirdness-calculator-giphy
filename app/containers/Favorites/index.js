@@ -4,6 +4,7 @@
  * The Favorites Section
  *
  */
+import './favorites.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -25,7 +26,7 @@ export default function Favorites() {
   };
 
   return (
-    <div>
+    <div className="favorites-container">
       <div>
         <FormattedMessage {...messages.title} />
       </div>
