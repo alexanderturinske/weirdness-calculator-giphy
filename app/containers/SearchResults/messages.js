@@ -4,7 +4,6 @@
  * This contains all the text for the SearchResults container.
  */
 import { defineMessages } from 'react-intl';
-import { numberLiteralTypeAnnotation } from '@babel/types';
 
 export const scope = 'app.containers.SearchResults';
 
