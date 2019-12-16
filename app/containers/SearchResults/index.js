@@ -49,7 +49,7 @@ export default function SearchResults() {
         <Slider
           min={0}
           max={maxWeirdness}
-          defaultValue={maxWeirdness / 2}
+          defaultValue={weirdness}
           onChange={onSlide}
         />
       </div>
