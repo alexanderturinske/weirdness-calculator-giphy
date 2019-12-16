@@ -22,7 +22,8 @@ export default function SearchForm() {
     setState(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = event => {
+    event.preventDefault();
     dispatch(fetchGifs(current));
   };
 
@@ -31,7 +32,11 @@ export default function SearchForm() {
       <form onSubmit={handleSubmit}>
         <label>
           <FormattedMessage {...messages.title} />
-          <input value={current} onChange={changeInput} />
+          <input
+            value={current}
+            onChange={changeInput}
+            onSubmit={handleSubmit}
+          />
         </label>
       </form>
       <button type="submit" onClick={handleSubmit}>
