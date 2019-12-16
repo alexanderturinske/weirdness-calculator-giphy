@@ -1,0 +1,16 @@
+.homepage-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.left-column {
+  flex: 3;
+}
+
+.right-column {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  margin: 2em auto;
+}
