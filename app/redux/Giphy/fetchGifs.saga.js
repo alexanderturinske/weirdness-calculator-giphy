@@ -5,6 +5,10 @@ import { giphyInputUrl } from './constants';
 import { maxWeirdness } from '../../constants';
 import * as types from './types';
 
+/**
+ * Gets the user's input and queires the GIPHY API for GIFs
+ * @param {Object} action contains user's input
+ */
 function* fetchGifsSaga(action) {
   try {
     const weirdGifsForks = [];

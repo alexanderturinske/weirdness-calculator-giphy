@@ -1,6 +1,6 @@
 /*
  *
- * LanguageProvider reducer
+ * Favorites reducer
  *
  */
 import * as types from './types';
