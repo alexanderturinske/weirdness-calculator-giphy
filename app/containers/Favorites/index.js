@@ -5,17 +5,18 @@
  *
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Gif from '../Gif';
+import LinkedButtom from '../LinkedButton';
 
 export default function Favorites() {
   const favorites = useSelector(state => state.favorites.favorites);
-  const areThere5Favorites = 5 - Object.keys(favorites).length;
-  const handleSubmit = () => {
-    // TODO: Navigate to /results
-  };
+
+  // TODO: Should be 5, not 1. Testing purposes only.
+  const areThere5Favorites = 1 - Object.keys(favorites).length;
 
   return (
     <div>
@@ -28,11 +29,9 @@ export default function Favorites() {
           return <Gif gif={giphy} weirdness={weirdness} key={giphy.id} />;
         })}
       </div>
-      <div>
-        <button type="submit" onClick={handleSubmit}>
-          <FormattedMessage {...messages.button} />
-        </button>
-      </div>
+      <LinkedButtom to="/results">
+        <FormattedMessage {...messages.button} />
+      </LinkedButtom>
       <div>
         <FormattedMessage
           {...messages.status}
@@ -42,3 +41,10 @@ export default function Favorites() {
     </div>
   );
 }
+
+Favorites.propTypes = {
+  // The history object from react-router
+  // Used so that a button can be used as a link
+  // Taken from https://stackoverflow.com/questions/42463263/wrapping-a-react-router-link-in-an-html-button
+  history: PropTypes.object,
+};

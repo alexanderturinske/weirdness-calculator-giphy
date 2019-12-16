@@ -23,7 +23,8 @@ export default function SearchResults() {
     distpatch(reduxInfo.actions.addFavorite({ gif: gifs[0], weirdness: 0 }));
   };
 
-  const isFavorite = gifs[0] && favorites[gifs[0].id];
+  const isFavorite = Object.keys(gifs).length && favorites[gifs[0].id];
+
   return (
     <div className="search-results-container">
       <h2>
